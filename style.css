@@ -1,0 +1,91 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+svg {
+  max-width: 100%;
+}
+
+:root {
+  --clr-900: #000000;
+  --clr-700: #6d6d6d7e;
+  --clr-200: #ffffff69;
+  --clr-100: #ffffff;
+}
+
+body {
+  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--clr-900);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.container {
+  perspective: 1080px;
+  display: grid;
+  place-items: center;
+}
+
+
+.svg-container {
+  position: relative;
+  width: 675px;
+  height: 676px;
+  transform-style: preserve-3d;
+  margin-top: -15em;
+  transform-origin: center center;
+  /* I messed up this one, after I finished the animation only then I remembered I should've made the widths of all SVGs dynamic */
+  transform: scale(var(--svg-scale));
+}
+
+.part {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform-origin: center center;
+}
+
+
+.progress-svg-container {
+  position: relative;
+  width: 366px;
+  aspect-ratio: 1;
+  transform-origin: center center;
+  transform: rotateZ(190deg);
+}
+
+.progress-svg-container>svg {
+  position: absolute;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-100%) rotateZ(270deg);
+  text-align: center;
+  color: var(--clr-100);
+  text-shadow: 0px 1px var(--clr-900);
+}
+
+#progress-value {
+  font-size: 100px;
+}
+
+.small-text {
+  margin-top: -.5em;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+span {
+  display: block;
+}
